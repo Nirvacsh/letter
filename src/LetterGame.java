@@ -13,7 +13,7 @@ public class LetterGame {
         do {
           //System.out.println("Correct letter - " + randomChar);
             input = sc.next().charAt(0);
-            if (!Character.UnicodeBlфock.CYRILLIC.equals(Character.UnicodeBlock.of(input))) {
+            if (!Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(input))) {
 
                 if ((input - NUMBER_OF_CHARS) < randomChar) {
                     System.out.println("too low");
