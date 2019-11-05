@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class LetterGame {
     public static void main(String... args) {
 
-        final int numberOfChars = 32;
+        final int NUMBER_OF_CHARS = 32;
 
         int range = (int)(Math.random() *26) + 65;
         char randomChar = (char) (range);
@@ -13,18 +13,19 @@ public class LetterGame {
         do {
           //System.out.println("Correct letter - " + randomChar);
             input = sc.next().charAt(0);
-            if (!Character.UnicodeBlock.CYRILLIC.equals(Character.UnicodeBlock.of(input))) {
+            if (!Character.UnicodeBlфock.CYRILLIC.equals(Character.UnicodeBlock.of(input))) {
 
-                if ((input - numberOfChars) < randomChar) {
+                if ((input - NUMBER_OF_CHARS) < randomChar) {
                     System.out.println("too low");
-                } else if ((input - numberOfChars) > randomChar) {
+                } else if ((input - NUMBER_OF_CHARS) > randomChar) {
                     System.out.println("too high");
                 }
-                if ((int) input > 90) {
-                    input = (char) (input - numberOfChars);
+                if ( input > 'Z') {
+                    input = (char) (input - NUMBER_OF_CHARS);
                 }
             } else {
                 System.out.println("Using cyrillic!!!");
+                System.out.println("Input one more time");
             }
         } while (input != randomChar );
 
